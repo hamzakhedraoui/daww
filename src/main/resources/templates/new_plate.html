@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8" />
+    <title>Create New plate</title>
+</head>
+<body>
+<div align="right">
+    <a href="/logout">logout</a>
+</div>
+<div align="center">
+    <h1>Create New plate</h1>
+    <br />
+    <form action="#" th:action="@{/p/save}" th:object="${plate}"
+          method="post">
+
+        <table border="0" cellpadding="10">
+            <tr>
+                <td>name:</td>
+                <td><input type="text" th:field="*{name}" /></td>
+            </tr>
+            <tr>
+                <td>type:</td>
+                <td><input type="text" th:field="*{type}" /></td>
+            </tr>
+            <tr>
+                <td>price:</td>
+                <td><input type="number" th:field="*{prix}" /></td>
+            </tr>
+            <tr>
+                <td colspan="2"><button type="submit">Save</button> </td>
+            </tr>
+        </table>
+    </form>
+</div>
+</body>
+</html>

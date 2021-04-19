@@ -1,0 +1,42 @@
+create database tasty;
+use tasty;
+create table account(
+    id int primary key AUTO_INCREMENT,
+    email varchar(50),
+    password varchar(50),
+    type varchar(30),
+    point int);
+insert into account values(null,'user1@gmail.com','123456789','R');
+insert into account values(null,'user2@gmail.com','123456789','L');
+insert into account values(null,'user3@gmail.com','123456789','C');
+create table card(
+    id int primary key AUTO_INCREMENT,
+    client_id int,
+    plate_id int,
+    finshed int);
+
+create table command(
+    id int primary key AUTO_INCREMENT,
+    client_id int,
+    livreur_id int,
+    plate_id int,
+    resturature_id int,
+    total_price double,
+    address varchar(100),
+    state varchar(30),
+    quantity int,
+    sent int,
+    finshed int);
+
+create table plate(
+    id int primary key AUTO_INCREMENT,
+    type varchar(30),
+    name varchar(30),
+    prix double);
+
+create table discount(
+    id int primary key AUTO_INCREMENT,
+    discount int);
+
+insert into discount values(null,0);
+

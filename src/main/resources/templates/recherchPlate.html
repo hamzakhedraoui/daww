@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"/>
+    <title>Plate Manager</title>
+</head>
+<body>
+<div align="right">
+    <a href="/logout">logout</a>
+</div>
+<div align="center">
+    <h1>Plate List</h1>
+    <a href="card">see card</a>
+    <a href="#">track order</a>
+    <br/><br/>
+    <table border="1" cellpadding="10">
+        <thead>
+        <tr>
+            <th>Plate ID</th>
+            <th>name</th>
+            <th>type</th>
+            <th>price</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="plate : ${listPlate}">
+            <td th:text="${plate.id}">Plate ID</td>
+            <td th:text="${plate.name}">name</td>
+            <td th:text="${plate.type}">type</td>
+            <td th:text="${plate.prix}">prix</td>
+            <td>
+                <a th:href="'/c/add/' + ${plate.id}">Add to card</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
